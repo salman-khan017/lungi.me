@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="image/Screenshot (41).jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-flex-box">
+        <!--------------------- side-bar section------------------ -->
+        
+            <div class="side-bar">
+                <ul>
+                    <div class="close-nav" onclick="sideHide()"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="logo"><img src="image/Screenshot (41).png" alt=""></div>
+                    <li class="link1 active" onclick="active1()"><i class="fa-brands fa-bitcoin"></i> Binary</li>
+                    <li class="link2"  onclick="active2()"><i class="fa-solid fa-draw-polygon"></i></i>Octal</li>
+                    <li class="link3"  onclick="active3()"><i class="fa-brands fa-hackerrank"></i> Hexadecimal</li>
+                    <li class="link4"  onclick="active4()"><i class="fa-solid fa-file-code"></i> InnerCode</li>
+                    <li class="link5"  onclick="active5()"><i class="fa-solid fa-circle-question"></i> Help</li>
+                    <li onmouseenter="moodDown()" onmouseleave="moodUp()"><i class="fa-solid fa-gear"></i>Mood<i class="fa-solid fa-caret-right"></i></li>
+                    <hr>
+                    <li><p class="copy-right">Privacy  · Terms  · Advertising  · Ad Choices   · Cookies  · More · Salman © 2023</p></li>
+                </ul>
+                <div class="mood-item" onmouseenter="moodDown()" onmouseleave="moodUp()">
+                    <i class="fa-solid fa-moon" onclick="moon()"></i>
+                    <i class="fa-solid fa-sun" onclick="sun()"></i>
+                </div>
+            </div>
+        <!--------------------- side-bar section------------------ -->
+        <div class="right-side-container">
+            <!--------------------- nav-bar section------------------ -->
+            <div class="nav-container">
+                <div class="open-nav" onclick="sideShow()"><i class="fa-solid fa-list"></i></div>
+                    <div>
+                        <p class="time"></p>
+                        <p class="tarik"></p>
+                    </div>
+                <div class="button-for-flex">
+                    <p><i class="fa-solid fa-heart heart" onclick="likeFun()"></i><span>14K+</span></p>
+                    <p><i class="fa-solid fa-clock-rotate-left" onclick="historyOpen()"></i></p>
+                </div>
+            </div>
+            <!--------------------- nav-bar section------------------ -->
+
+            <!-- ------------------binary input section------------------- -->
+                <div class="main-input-section main-input-all" onclick="sideHide()">
+                    <div class="sec-input">
+                        <input type="text" placeholder="Enter Numbers..." class="input-filde">
+                        <p onclick="convert()">Convert</p>
+                    </div>
+
+                    <p class="about-binary">Some Information about Binary system :</p>
+                    <p class="binary-discription">Binary numbers, also known as base-2 numbers, are a fundamental part of digital computing.
+
+                        They consist of only two digits, 0 and 1, making them the simplest numeric system.
+
+                        In contrast to the decimal system (base-10), binary operates on powers of 2. <br>
+
+                        <span>*</span> Each digit in a binary number represents a power of 2, starting from the right.<br>
+
+                        <span>*</span>  Binary numbers are ideal for encoding and storing data in electronic devices due to their simplicity. <br>
+
+                        <span>*</span>  The combination of 0s and 1s in binary is used to represent everything from text to images and sound. <br>
+
+                        Bitwise operations in programming involve manipulating binary numbers to perform tasks like shifting and masking.
+
+                        Hexadecimal notation is often used to make binary numbers more human-readable, as it groups binary digits into sets of four.
+                        
+                        Learn more from... <span><a href="https://en.wikipedia.org/wiki/Binary_number" target="_blank">Wikipedia.org</a></span>
+                    </p>
+                </div>
+                <!-- ------------------binary input section------------------- -->
+
+                <!-- ------------------octal input section------------------- -->
+                <div class="main-input-section-octal" onclick="sideHide()">
+                    <div class="sec-input">
+                        <input type="text" placeholder="Enter Numbers..." class="input-filde-octal">
+                        <p onclick="convertOctal()">Convert</p>
+                    </div>
+
+                    <p class="about-binary">Some Information about Octal system :</p>
+                    <p class="binary-discription">Octal numbers are a base-8 numeral system, which means they use eight digits to represent values.
+
+                        The octal system uses the digits 0 to 7, with each digit representing a power of 8. <br>
+
+                        <span>*</span>In octal, the rightmost digit has a place value of 8^0, the next digit to the left has a place value of 8^1, and so on. <br>
+
+
+                        <span>*</span>Octal numbers are often used in computing because they easily map to binary, which is used in digital systems. <br>
+
+                        Octal numbers are frequently used in Unix and Linux permissions, where each digit represents read, write, and execute permissions for different user groups.
+
+                        When converting from binary to octal, three binary digits can be grouped together to represent a single octal digit.
+
+                        Octal numbers are less commonly used in everyday life compared to decimal (base-10) numbers.
+
+                        To indicate that a number is in octal notation, a leading "0" is often used (e.g., 0755). <br>
+                        
+                        Learn more from... <span><a href="https://en.wikipedia.org/wiki/Octal" target="_blank">Wikipedia.org</a></span>
+                    </p>
+                </div>
+                <!-- ------------------octal input section------------------- -->
+
+                <!-- ------------------ hexadesimal input section------------------- -->
+                <div class="main-input-section-hex" onclick="sideHide()">
+                    <div class="sec-input">
+                        <input type="text" placeholder="Enter Numbers..." class="input-filde-hex">
+                        <p onclick="convertHex()">Convert</p>
+                    </div>
+
+                    <p class="about-binary">Some Information about  Hexadecimal system :</p>
+                    <p class="binary-discription">Hexadecimal numbers are a base-16 numeral system, using 16 unique digits to represent values.
+
+                        In addition to the digits 0-9, hexadecimal uses the letters A, B, C, D, E, and F to represent values 10 to 15, respectively.
+                        
+                        Each digit in a hexadecimal number represents a power of 16. <br>
+                        
+                        <span>*</span> Hexadecimal numbers are commonly used in computing, particularly in low-level programming and memory addressing due to their direct mapping to binary representation. <br>
+                        
+                        <span>*</span> They are often used in web design to specify colors using a six-digit hexadecimal code like #RRGGBB, where RR represents red, GG represents green, and BB represents blue. <br>
+                        
+                        Learn more from... <span><a href="https://en.wikipedia.org/wiki/Hexadecimal" target="_blank">Wikipedia.org</a></span>
+
+                        </p>
+                </div>
+
+                <!-- ------------------ hexadesimal input section------------------- -->
+
+                <div class="inner-code"  onmousedown="return false" onselectstart="return false" onclick="sideHide()">
+                    <p class="binary-discription inner-dis"> <span class="inner-star">*</span> Users may find troubleshooting guides and common mistakes associated with working in different bases. This helps users _avoid errors in their calculations or programming.</p>
+                    <p class="html-heading">HTML :</p>
+                    <div class="code-box">
+                        <!----------------------------- code ---------------------------------->
+                        <code>
+                            <span class="sym">&#60;!</span><span class="tag">DOCTYPE</span> <span class="attr">html</span><span class="sym">&#62;</span> <br>
+
+                            <span class="sym">&#60;</span><span class="tag">html</span> <span class="attr">lang="</span><span class="value">en</span><span class="attr">"</span><span class="sym">&#62;</span> <br>
+
+                            <span class="sym">&#60;</span><span class="tag">head</span><span class="sym">&#62;</span> <br>
+
+                            <span class="sym">&#60;</span><span class="tag">meta</span> <span class="attr">charset="</span><span class="value">UTF-8</span><span class="attr">"</span><span class="sym">&#62;</span> <br>
+                            <span class="sym">&#60;</span><span class="tag">meta</span> <span class="attr">http-equiv="</span><span class="value">X-UA-compatible</span><span class="attr">"</span> <span class="attr">content="</span><span class="value">IE=edge</span><span class="attr">"</span><span class="sym">&#62;</span> <br>
+                                
+                            <span class="sym">&#60;</span><span class="tag">title</span><span class="sym">&#62;</span><span class="txt">Convertor</span><span class="sym">&#60;/</span><span class="tag">title</span><span class="sym">&#62;</span> <br>
+        
+                            <span class="sym">&#60;/</span><span class="tag">head</span><span class="sym">&#62;</span> <br>
+
+                            <span class="sym">&#60;</span><span class="tag">body</span><span class="sym">&#62;</span> <br>
+
+                            <span class="sym div-m">&#60;</span><span class="tag">div</span><span class="sym">&#62;</span> <br>
+
+                            <span class="sym input-m">&#60;</span><span class="tag">input</span> <span class="attr">type="</span><span class="value">text</span><span class="attr">"</span><span class="sym">&#62;</span> <br>
+
+                            <span class="sym input-m">&#60;</span><span class="tag">button</span> <span class="attr">onclick="</span><span class="ylow">function</span><span class="bket">()</span><span class="sym">&#62;</span><span class="sym">&#60;/</span><span class="tag">button</span><span class="sym">&#62;</span> <br>
+
+                            <span class="sym div-m">&#60;/</span><span class="tag">div</span><span class="sym">&#62;</span> <br>
+
+                            <span class="sym">&#60;/</span><span class="tag">body</span><span class="sym">&#62;</span>
+                        </code>
+                        <!----------------------------- code ---------------------------------->
+                    </div>
+                    <p class="html-heading">JavaScript :</p>
+                    <div class="code-box js-code">
+                        <code>
+                            <span class="tag">function</span> <span class="ylow">function</span><span class="bket">()</span><span class="sym">{</span> <br>
+                            <span class="tag">let</span> <span class="attr">getInput</span> <span class="sym">=</span> <span class="attr">document.</span><span class="ylow">getElementByTagName</span><span class="ylow">(</span><span class="value">'input'</span><span class="ylow">)</span> <br> 
+
+                            <span class="tag">let</span> <span class="attr">getValue</span> <span class="sym">=</span> <span class="attr">Number</span><span class="ylow">(</span><span class="attr">getInput.value</span><span class="ylow">)</span> <br>
+                            <span class="attr">document.</span><span class="ylow">getElementById</span><span class="ylow">(</span><span class="value">'result'</span><span class="ylow">)</span><span class="attr">.innerHTML</span> <span class="sym">=</span> <span class="hudai">`${getValue.toString(2, 8, 16)}`;</span>
+                        </code>
+                    </div>
+                    <p class="note">Note : This Codes cannot be coped !</p>
+                </div>
+                <div class="help" onclick="sideHide()">
+                    <p class="no-help">I can Not Help you right now...</p>
+                </div>
+            
+
+
+
+            <div class="result-box">
+                <div><i class="fa-solid fa-check"></i></div>
+                <p class="statment">Your Result</p>
+                <hr class="under-line">
+                <p class="result"></p>
+                <p class="ok" onclick="ok()">OK</p>
+                <div class="timer "><hr></div> 
+            </div>
+
+            <div class="spam-box">
+                <div><i class="fa-solid fa-xmark"></i></div>
+                <p class="spam">Enter only Number...</p>
+                <p class="ok wrong" onclick="wrong()">OK</p>
+            </div>
+
+            <div class="nowrite-box">
+                <div><i class="fa-solid fa-circle-exclamation"></i></div>
+                <p class="spam">Didn'n Enter anything..</p>
+                <p class="okey ok" onclick="yesWrite()">OK</p>
+            </div>
+
+
+            <div class="history-container">
+                <div class="close-history" onclick="historyClose()"><i class="fa-solid fa-xmark"></i></div>
+                <div class="history-save">
+                    <div class="history1">
+                        <span class="user-input">0</span>
+                        <span class="number-system"><i class="fa-brands fa-bitcoin"></i></span>
+                        <span class="pro-output">0</span>
+                    </div>
+
+                    <div class="history2">
+                        <span class="user-input">0</span>
+                        <span class="number-system"><i class="fa-solid fa-draw-polygon"></i></span>
+                        <span class="pro-output">0</span>
+                    </div>
+
+                    <div class="history3">
+                        <span class="user-input">0</span>
+                        <span class="number-system"><i class="fa-brands fa-hackerrank"></i></span>
+                        <span class="pro-output">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <i class="fa-solid fa-heart popup-i"></i>
+        <p class="paragraph">Thank You for the like</p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
